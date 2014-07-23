@@ -8,7 +8,9 @@ include './ConcreteFactories/ChromeFormFactory.php';
 include './ConcreteFactories/FireFoxFormFactory.php';
 include './ConcreteProducts/ChromeButtonElement.php';
 include './ConcreteProducts/FireFoxButtonElement.php';
+include './ConcreteProducts/ExplorerButtonElement.php';
 include './ConcreteFactories/FormFactoryCreator.php';
+include './ConcreteFactories/ExplorerFormFactory.php';
 
 use Factory\ConcreteFactories\FormFactoryCreator;
 
@@ -38,6 +40,8 @@ class Application
             return 'FireFox';
         } else if (preg_match('/Chrome/i', $browser)) {
             return 'Chrome';
+        } else if (preg_match('/MSIE/i', $browser)) {
+            return 'Explorer';
         } else {
             throw new \Exception('Unknow browser');
         }

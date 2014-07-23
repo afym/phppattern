@@ -8,6 +8,8 @@
             $option =  'firefox';
         } else if (preg_match('/Chrome/i', $browser)) {
             $option = 'chrome';
+        } else if (preg_match('/MSIE/i', $browser)) {
+            $option = 'explorer';
         }
         
 ?>
@@ -52,4 +54,6 @@
                  text-align: center;
                  vertical-align: middle;
                  white-space: nowrap;">Save</button>
+<?php elseif ($option == 'explorer') : ?>
+    // BOTON IE
 <?php endif; ?>
